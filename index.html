@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'escalette — Fresh meals & catering, Kigali</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F8F3;--card:#fff;--ink:#1C2420;--mut:#5C675F;--g:#1F4D36;--g2:#2E6B4A;--sun:#F2B01E;--red:#B8323A;--line:#DCE3D9;--wa:#1FA855}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#101712;--card:#18221B;--ink:#EEF3EC;--mut:#9DAAA0;--g:#6FCB97;--g2:#4FAE7A;--line:#2A382E}}
+:root[data-theme=dark]{--bg:#101712;--card:#18221B;--ink:#EEF3EC;--mut:#9DAAA0;--g:#6FCB97;--g2:#4FAE7A;--line:#2A382E}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;line-height:1.1;margin:0}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:1080px;margin:auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--g);color:#fff}
+.bar{display:flex;align-items:center;gap:10px;height:58px}
+.logo{font:800 22px 'Bricolage Grotesque',sans-serif;color:#fff;text-decoration:none;margin-right:auto}
+.logo i{color:var(--sun);font-style:normal}
+nav{display:none;gap:18px}nav a{color:#fff;text-decoration:none;font-weight:500;font-size:15px}
+@media(min-width:760px){nav{display:flex}}
+.lang{display:flex;border:1px solid #ffffff66;border-radius:99px;overflow:hidden}
+.lang button{background:none;border:0;color:#fff;padding:5px 11px;font-size:13px;font-weight:700}
+.lang button[aria-pressed=true]{background:var(--sun);color:#1C2420}
+.cartbtn{background:var(--sun);color:#1C2420;border:0;border-radius:99px;padding:8px 14px;font-weight:700}
+.hero{background:var(--g);color:#fff;padding:44px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:var(--sun);opacity:.95}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(36px,8vw,68px);font-weight:800;max-width:11em}
+.hero p{max-width:34em;font-size:18px;opacity:.92;margin:16px 0 24px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{border:0;border-radius:12px;padding:13px 20px;font-weight:700;text-decoration:none;display:inline-block;text-align:center}
+.b1{background:var(--sun);color:#1C2420}.b2{background:#ffffff1f;color:#fff;border:1px solid #ffffff66}
+.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:-26px;position:relative;z-index:2}
+@media(min-width:760px){.trust{grid-template-columns:repeat(4,1fr)}}
+.trust div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;font-weight:500}
+.trust b{display:block;color:var(--g)}
+section{padding:46px 0}
+h2{font-size:clamp(28px,5vw,40px);margin-bottom:6px}
+.sub{color:var(--mut);margin:0 0 20px;max-width:40em}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.tabs button{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:8px 16px;font-weight:500}
+.tabs button[aria-pressed=true]{background:var(--g);color:#fff;border-color:var(--g)}
+.subtabs button{font-size:14px;padding:5px 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.ph{height:130px;display:grid;place-items:center;font-size:54px;position:relative}
+.ph small{position:absolute;bottom:6px;right:8px;font-size:10px;opacity:.55;font-family:'DM Sans'}
+.cb{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cb h3{font-size:19px}.cb p{margin:0;color:var(--mut);font-size:14px;flex:1}
+.price{font-weight:700;color:var(--g)}
+.row{display:flex;gap:8px;margin-top:6px}
+.add{flex:1;background:var(--g);color:#fff;border:0;border-radius:10px;padding:10px;font-weight:700}
+.wa{background:var(--wa);color:#fff;border:0;border-radius:10px;padding:10px 12px;font-weight:700;text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:5px}
+.pk{border-top:6px solid var(--sun)}
+.pk ul{margin:0;padding-left:18px;color:var(--mut);font-size:14px;flex:1}
+.who{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.who span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:14px}
+form.box,.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.fg{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:640px){.fg.two{grid-template-columns:1fr 1fr}}
+label{font-size:14px;font-weight:500;display:grid;gap:4px}
+input,select,textarea{font:inherit;padding:11px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+.how{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.how div{border-left:4px solid var(--sun);padding:4px 14px}
+footer{background:var(--g);color:#fff;padding:34px 0 90px}
+footer a{color:var(--sun)}footer p{margin:6px 0;opacity:.9}
+.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:15;box-shadow:0 4px 14px #0004}
+.drawer{position:fixed;inset:0;z-index:40;display:none}
+.drawer.open{display:block}
+.shade{position:absolute;inset:0;background:#0009}
+.panel{position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);background:var(--bg);padding:18px;padding-top:calc(18px + env(safe-area-inset-top,0px));overflow:auto}
+.panel h2{font-size:26px}
+.line{display:flex;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.line span:first-child{flex:1}
+.q{display:flex;align-items:center;gap:6px}.q button{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.pay{display:grid;gap:8px;grid-template-columns:1fr 1fr}
+.pay label{border:2px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-weight:700;cursor:pointer;display:block}
+.pay input{position:absolute;opacity:0;width:0}
+.pay input:checked+span{color:#000}
+.pay label:has(input:checked){border-color:var(--g);background:var(--card)}
+.momo{border-top:5px solid #FFCB05}.airtel{border-top:5px solid #E40000}
+.ok{background:#e7f6ec;color:#14532d;border-radius:10px;padding:12px;margin-top:12px;display:none}
+.x{float:right;background:none;border:0;font-size:26px;color:var(--ink)}
+.sec{font-size:13px;color:var(--mut);margin-top:10px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+<a class="logo" href="#top">L'escalette<i>.</i></a>
+<nav><a href="#menu" data-i="n_menu"></a><a href="#services" data-i="n_serv"></a><a href="#how" data-i="n_how"></a><a href="#contact" data-i="n_contact"></a></nav>
+<div class="lang" role="group" aria-label="Language"><button id="en" aria-pressed="true">EN</button><button id="rw" aria-pressed="false">RW</button></div>
+<button class="cartbtn" id="openCart" aria-label="Cart">🛒 <span id="cnt">0</span></button>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<h1 data-i="h1"></h1><p data-i="h1p"></p>
+<div class="cta"><a class="btn b1" href="#menu" data-i="c1"></a><a class="btn b2" href="#services" data-i="c2"></a></div>
+</div></div>
+
+<div class="wrap trust">
+<div><b data-i="t1h"></b><span data-i="t1"></span></div>
+<div><b data-i="t2h"></b><span data-i="t2"></span></div>
+<div><b data-i="t3h"></b><span data-i="t3"></span></div>
+<div><b data-i="t4h"></b><span data-i="t4"></span></div>
+</div>
+
+<section id="menu"><div class="wrap">
+<h2 data-i="n_menu"></h2><p class="sub" data-i="menu_sub"></p>
+<div class="tabs" id="cats"></div>
+<div class="tabs subtabs" id="subs" style="margin-top:8px"></div>
+<div class="grid" id="items"></div>
+</div></section>
+
+<section id="services" style="background:var(--card)"><div class="wrap">
+<h2 data-i="n_serv"></h2><p class="sub" data-i="serv_sub"></p>
+<div class="who"><span data-i="w1"></span><span data-i="w2"></span><span data-i="w3"></span><span data-i="w4"></span></div>
+<div class="grid" id="pkgs"></div>
+<h2 style="margin-top:40px" data-i="book_h"></h2><p class="sub" data-i="book_sub"></p>
+<form class="box" id="bookForm"><div class="fg two">
+<label><span data-i="f_name"></span><input name="name" required autocomplete="name"></label>
+<label><span data-i="f_org"></span><input name="org" autocomplete="organization"></label>
+<label><span data-i="f_phone"></span><input name="phone" type="tel" required autocomplete="tel" placeholder="07XX XXX XXX"></label>
+<label><span data-i="f_pkg"></span><select name="pkg" id="pkgSel"></select></label>
+<label><span data-i="f_date"></span><input name="date" type="date" required></label>
+<label><span data-i="f_guests"></span><input name="guests" type="number" min="5" value="20" required></label>
+</div>
+<label style="margin-top:12px"><span data-i="f_venue"></span><input name="venue" required></label>
+<label style="margin-top:12px"><span data-i="f_notes"></span><textarea name="notes" rows="2"></textarea></label>
+<div class="cta" style="margin-top:14px"><button class="btn b1" style="background:var(--g);color:#fff" data-i="send_req"></button></div>
+<div class="ok" id="bookOk" role="status"></div>
+</form>
+</div></section>
+
+<section id="how"><div class="wrap"><h2 data-i="n_how"></h2><p class="sub"></p>
+<div class="how">
+<div><h3 data-i="s1h"></h3><p data-i="s1"></p></div>
+<div><h3 data-i="s2h"></h3><p data-i="s2"></p></div>
+<div><h3 data-i="s3h"></h3><p data-i="s3"></p></div>
+<div><h3 data-i="s4h"></h3><p data-i="s4"></p></div>
+</div></div></section>
+
+<footer id="contact"><div class="wrap">
+<h2 style="color:#fff">L'escalette</h2>
+<p data-i="foot"></p>
+<p>📍 Kigali, Rwanda · ☎ <a href="tel:+250788000000">+250 788 000 000</a> · <a id="waFoot" href="#">WhatsApp</a></p>
+<p style="font-size:13px;opacity:.7">© 2026 L'escalette. MTN MoMo · Airtel Money</p>
+</div></footer>
+
+<a class="wa fab" id="waFab" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Cart">
+<div class="shade" id="shade"></div>
+<div class="panel">
+<button class="x" id="closeCart" aria-label="Close">×</button>
+<h2 data-i="cart"></h2>
+<div id="lines"></div>
+<div id="empty" data-i="empty" style="color:var(--mut);padding:14px 0"></div>
+<div id="co" style="display:none">
+<p style="font-size:20px;font-weight:700;margin:14px 0">Total: <span id="total"></span></p>
+<div class="fg">
+<label><span data-i="f_name"></span><input id="cn" autocomplete="name"></label>
+<label><span data-i="f_phone"></span><input id="cp" type="tel" autocomplete="tel" placeholder="07XX XXX XXX"></label>
+<label><span data-i="f_addr"></span><input id="ca" autocomplete="street-address"></label>
+</div>
+<p style="margin:14px 0 6px;font-weight:700" data-i="pay_h"></p>
+<div class="pay">
+<label class="momo"><input type="radio" name="pm" value="MTN MoMo" checked>MTN MoMo</label>
+<label class="airtel"><input type="radio" name="pm" value="Airtel Money">Airtel Money</label>
+</div>
+<div class="row" style="margin-top:14px">
+<button class="btn b1" id="payBtn" style="flex:1;background:var(--g);color:#fff" data-i="pay_btn"></button>
+</div>
+<div class="row"><a class="wa" id="waCart" href="#" target="_blank" rel="noopener" style="flex:1;justify-content:center" data-i="wa_cart"></a></div>
+<div class="ok" id="payOk" role="status"></div>
+<p class="sec" data-i="secure"></p>
+</div>
+</div></div>
+
+<script>
+const WA="250788000000";
+const T={
+en:{n_menu:"Menu",n_serv:"Services & Bookings",n_how:"How it works",n_contact:"Contact",
+h1:"Real food, ready on time.",h1p:"Daily cooked meals, snacks and catering for homes, offices and events across Kigali. Order in minutes, pay with Mobile Money.",
+c1:"Order now",c2:"Book catering",
+t1h:"Cooked fresh daily",t1:"Never reheated",t2h:"Pay safely",t2:"MTN MoMo & Airtel Money",t3h:"Fixed prices",t3:"No surprises at delivery",t4h:"For business too",t4:"Invoices & event packages",
+menu_sub:"Choose a category, then add to cart or order straight on WhatsApp.",
+cats:{meals:"Daily Meals",snacks:"Snacks & Pastries",drinks:"Beverages"},subs:{lunch:"Lunch",supper:"Supper",box:"Meal boxes (1–2 people)"},
+add:"Add to cart",wa:"WhatsApp",photo:"Photo",
+serv_sub:"Fixed-price packages for motels, venues, offices and event planners. Pick a package and send a booking request. We confirm within 2 hours.",
+w1:"Motels & guesthouses",w2:"Public venues",w3:"Corporate events",w4:"Small parties",
+book_h:"Request a booking",book_sub:"Free to request. Nothing is charged until we confirm.",
+f_name:"Full name",f_org:"Company (optional)",f_phone:"Phone / WhatsApp",f_pkg:"Package",f_date:"Event date",f_guests:"Guests",f_venue:"Venue / address",f_notes:"Notes (diet, timing)",f_addr:"Delivery address",
+send_req:"Send booking request",req_ok:"Request ready. WhatsApp opened so you can send it to us. We reply within 2 hours.",
+s1h:"Choose",s1:"Browse meals, snacks and drinks.",s2h:"Order",s2:"Add to cart, or tap WhatsApp on any item.",s3h:"Pay",s3:"Approve the prompt on your MTN or Airtel phone.",s4h:"Enjoy",s4:"Delivered hot, in sealed packaging.",
+foot:"A structured, premium alternative to random street-buying: clean kitchen, set prices, on-time delivery.",
+cart:"Your cart",empty:"Your cart is empty. Add something from the menu.",pay_h:"Pay with",pay_btn:"Pay with Mobile Money",wa_cart:"Order cart via WhatsApp",
+secure:"🔒 Secure payment. We never see your Mobile Money PIN. You approve on your own phone.",
+need:"Please enter your name, a valid phone number (07XXXXXXXX) and delivery address.",
+pay_ok:(m,p,t)=>`Payment request of ${t} sent to ${p} via ${m}. Enter your PIN on your phone to approve. We start cooking once confirmed.`,
+pkgs:[{n:"Small Party",pr:"From 120,000 RWF",i:["10–20 guests","2 mains, 1 side, drinks","Delivery & set-up"],e:"🎉"},{n:"Office Lunch",pr:"From 6,500 RWF / person",i:["Min. 15 people","Choice of 3 menus","Invoice provided"],e:"🏢"},{n:"Corporate Event",pr:"From 450,000 RWF",i:["50–150 guests","Buffet + staff","Pastries & beverages"],e:"🤝"},{n:"Motel & Venue Supply",pr:"Custom monthly rate",i:["Daily scheduled delivery","Fixed weekly menu","Monthly invoice"],e:"🏨"}]},
+rw:{n_menu:"Ibiryo",n_serv:"Serivisi & Gutumiza",n_how:"Uko bikora",n_contact:"Twandikire",
+h1:"Ibiryo nyabyo, ku gihe.",h1p:"Ifunguro rihiye buri munsi, utuntu two kurya n'ibiryo by'ibirori mu mujyi wa Kigali. Tumiza vuba, wishyure na Mobile Money.",
+c1:"Tumiza ubu",c2:"Tegura ibirori",
+t1h:"Bihiye uyu munsi",t1:"Nta biteganyirijwe",t2h:"Kwishyura bifite umutekano",t2:"MTN MoMo & Airtel Money",t3h:"Ibiciro bihamye",t3:"Nta gitunguranye",t4h:"N'ibigo by'ubucuruzi",t4:"Fagitire n'ibyo mu birori",
+menu_sub:"Hitamo icyiciro, hanyuma ushyire mu gaseke cyangwa utumize kuri WhatsApp.",
+cats:{meals:"Ifunguro ry'umunsi",snacks:"Utuntu & Imigati",drinks:"Ibinyobwa"},subs:{lunch:"Ifunguro rya Saa Sita",supper:"Ifunguro rya nimugoroba",box:"Udusanduku (abantu 1–2)"},
+add:"Shyira mu gaseke",wa:"WhatsApp",photo:"Ifoto",
+serv_sub:"Ibiciro bihamye ku mahoteli, aho bakorera ibirori, ibiro n'abategura ibirori. Hitamo ipaki utwoherereze ubusabe. Tuguhamagara mu masaha 2.",
+w1:"Amacumbi & amahoteli",w2:"Ahantu rusange",w3:"Ibirori by'ibigo",w4:"Ibirori bito",
+book_h:"Saba gutumirwa",book_sub:"Gusaba ni ubuntu. Nta kwishyura kugeza twemeje.",
+f_name:"Amazina yose",f_org:"Ikigo (si ngombwa)",f_phone:"Telefone / WhatsApp",f_pkg:"Ipaki",f_date:"Itariki y'ibirori",f_guests:"Abatumirwa",f_venue:"Aho bizabera",f_notes:"Ibindi (ibyo batarya, igihe)",f_addr:"Aho kugezwa",
+send_req:"Ohereza ubusabe",req_ok:"Ubusabe burateguye. WhatsApp irafunguwe ngo ubutwoherereze. Tuzagusubiza mu masaha 2.",
+s1h:"Hitamo",s1:"Reba ibiryo, utuntu n'ibinyobwa.",s2h:"Tumiza",s2:"Shyira mu gaseke, cyangwa ukande WhatsApp ku kintu icyo ari cyo cyose.",s3h:"Ishyura",s3:"Emeza ubusabe kuri telefone yawe ya MTN cyangwa Airtel.",s4h:"Ryoherwa",s4:"Bigezwa bishyushye mu bipfunyika bifunze.",
+foot:"Uburyo buteguye kandi bwiza busimbura kugurira ku muhanda: igikoni gisukuye, ibiciro bihamye, kugezwa ku gihe.",
+cart:"Agaseke kawe",empty:"Agaseke karimo ubusa. Shyiramo ikintu ku rutonde.",pay_h:"Ishyura ukoresheje",pay_btn:"Ishyura na Mobile Money",wa_cart:"Tumiza ibiri mu gaseke kuri WhatsApp",
+secure:"🔒 Kwishyura bifite umutekano. Ntituzi PIN yawe. Wemeza kuri telefone yawe.",
+need:"Andika amazina, nimero ya telefone nyayo (07XXXXXXXX) n'aho kugezwa.",
+pay_ok:(m,p,t)=>`Ubusabe bwo kwishyura ${t} bwoherejwe kuri ${p} ukoresheje ${m}. Andika PIN kuri telefone yawe wemeze. Dutangira guteka ukimara kwemeza.`,
+pkgs:[{n:"Ibirori bito",pr:"Guhera 120,000 RWF",i:["Abantu 10–20","Ibiryo 2, ikindi 1, ibinyobwa","Kugezwa no gutegura"],e:"🎉"},{n:"Ifunguro ry'ibiro",pr:"Guhera 6,500 RWF / umuntu",i:["Nibura abantu 15","Hitamo menu 3","Fagitire itangwa"],e:"🏢"},{n:"Ibirori by'ikigo",pr:"Guhera 450,000 RWF",i:["Abantu 50–150","Buffet n'abakozi","Imigati & ibinyobwa"],e:"🤝"},{n:"Amacumbi & aho bakorera ibirori",pr:"Igiciro ku kwezi",i:["Kugezwa buri munsi","Menu ihamye y'icyumweru","Fagitire y'ukwezi"],e:"🏨"}]}
+};
+const ITEMS=[
+{c:"meals",s:"lunch",n:{en:"Rice, beans & grilled chicken",rw:"Umuceri, ibishyimbo & inkoko"},d:{en:"Steamed rice, seasoned beans, grilled chicken, side salad.",rw:"Umuceri, ibishyimbo, inkoko yokeje, salade."},p:4500,e:"🍗",bg:"#F7E3B5"},
+{c:"meals",s:"lunch",n:{en:"Isombe & fried plantain",rw:"Isombe & ibitoki bikaranze"},d:{en:"Cassava leaves in peanut sauce with golden plantain.",rw:"Isombe n'ibitoki bikaranze."},p:3500,e:"🥬",bg:"#D5EBD9"},
+{c:"meals",s:"lunch",n:{en:"Brochettes plate",rw:"Brochettes n'ifiriti"},d:{en:"Goat or beef brochettes, chips, kachumbari.",rw:"Brochettes, ifiriti, kachumbari."},p:5000,e:"🍢",bg:"#F4D3C4"},
+{c:"meals",s:"supper",n:{en:"Tilapia & ugali",rw:"Ifi n'ubugari"},d:{en:"Whole grilled tilapia, ugali, tomato sauce.",rw:"Ifi ryokeje, ubugari, isosi."},p:6500,e:"🐟",bg:"#CFE5EE"},
+{c:"meals",s:"supper",n:{en:"Pilau with beef",rw:"Pilau n'inyama"},d:{en:"Spiced rice slow-cooked with tender beef.",rw:"Umuceri w'ibirungo n'inyama."},p:4800,e:"🍛",bg:"#F7E3B5"},
+{c:"meals",s:"box",n:{en:"Solo Box",rw:"Agasanduku k'umuntu 1"},d:{en:"One main, one side, fruit and water. Serves 1.",rw:"Ifunguro 1, ikindi 1, imbuto n'amazi."},p:5500,e:"🍱",bg:"#D5EBD9"},
+{c:"meals",s:"box",n:{en:"Duo Box",rw:"Agasanduku k'abantu 2"},d:{en:"Two mains, two sides, two drinks. Serves 2.",rw:"Ifunguro 2, ibindi 2, ibinyobwa 2."},p:10000,e:"🥡",bg:"#F4D3C4"},
+{c:"snacks",s:"",n:{en:"Samosas (4)",rw:"Samosa (4)"},d:{en:"Crispy, filled with spiced beef.",rw:"Zikaranze, zirimo inyama."},p:2000,e:"🥟",bg:"#F7E3B5"},
+{c:"snacks",s:"",n:{en:"Butter croissant",rw:"Croissant"},d:{en:"Baked each morning.",rw:"Yokaranze buri gitondo."},p:1200,e:"🥐",bg:"#F4D3C4"},
+{c:"snacks",s:"",n:{en:"Mandazi (6)",rw:"Amandazi (6)"},d:{en:"Soft, lightly sweet, cardamom-scented.",rw:"Yoroshye, aryoshye gake."},p:1500,e:"🍩",bg:"#D5EBD9"},
+{c:"drinks",s:"",n:{en:"Soda 500ml",rw:"Soda 500ml"},d:{en:"Coca-Cola, Fanta or Sprite, served cold.",rw:"Coca-Cola, Fanta cyangwa Sprite, ikonje."},p:600,e:"🥤",bg:"#F4D3C4"},
+{c:"drinks",s:"",n:{en:"Mineral water 1L",rw:"Amazi 1L"},d:{en:"Sealed bottled water.",rw:"Amazi afunze mu icupa."},p:700,e:"💧",bg:"#CFE5EE"},
+{c:"drinks",s:"",n:{en:"Water 12-pack",rw:"Amazi 12"},d:{en:"For offices and gatherings.",rw:"Ku biro no mu birori."},p:7500,e:"🧊",bg:"#CFE5EE"}
+];
+let L="en",cat="meals",sub="lunch",cart={};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const fmt=n=>n.toLocaleString("en-US")+" RWF";
+const wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+const tot=()=>Object.entries(cart).reduce((a,[i,q])=>a+ITEMS[i].p*q,0);
+function render(){
+ const t=T[L];document.documentElement.lang=L==="rw"?"rw":"en";
+ $$("[data-i]").forEach(e=>e.textContent=t[e.dataset.i]);
+ $("#en").setAttribute("aria-pressed",L==="en");$("#rw").setAttribute("aria-pressed",L==="rw");
+ $("#cats").innerHTML=Object.keys(t.cats).map(k=>`<button aria-pressed="${k===cat}" data-c="${k}">${t.cats[k]}</button>`).join("");
+ $("#subs").style.display=cat==="meals"?"flex":"none";
+ $("#subs").innerHTML=Object.keys(t.subs).map(k=>`<button aria-pressed="${k===sub}" data-s="${k}">${t.subs[k]}</button>`).join("");
+ $("#items").innerHTML=ITEMS.map((x,i)=>({x,i})).filter(({x})=>x.c===cat&&(cat!=="meals"||x.s===sub)).map(({x,i})=>
+ `<article class="card"><div class="ph" style="background:${x.bg}">${x.e}<small>${t.photo}</small></div><div class="cb"><h3>${x.n[L]}</h3><p>${x.d[L]}</p><div class="price">${fmt(x.p)}</div>
+ <div class="row"><button class="add" data-a="${i}">${t.add}</button><a class="wa" target="_blank" rel="noopener" href="${wa("Hello L'escalette, I'd like to order: 1 x "+x.n.en+" ("+fmt(x.p)+")")}">💬 ${t.wa}</a></div></div></article>`).join("");
+ $("#pkgs").innerHTML=t.pkgs.map((p,i)=>`<article class="card pk"><div class="cb"><div style="font-size:34px">${p.e}</div><h3>${p.n}</h3><div class="price">${p.pr}</div><ul>${p.i.map(s=>`<li>${s}</li>`).join("")}</ul>
+ <div class="row"><button class="add" data-pk="${i}">${t.send_req}</button><a class="wa" target="_blank" rel="noopener" href="${wa("Hello L'escalette, I'm interested in the "+T.en.pkgs[i].n+" package.")}">💬</a></div></div></article>`).join("");
+ const sel=$("#pkgSel"),cur=sel.selectedIndex;sel.innerHTML=t.pkgs.map(p=>`<option>${p.n}</option>`).join("");sel.selectedIndex=Math.max(cur,0);
+ cartUI();
+}
+function cartUI(){
+ const t=T[L],ids=Object.keys(cart);
+ $("#cnt").textContent=Object.values(cart).reduce((a,b)=>a+b,0);
+ $("#lines").innerHTML=ids.map(i=>`<div class="line"><span>${ITEMS[i].n[L]}<br><small>${fmt(ITEMS[i].p)}</small></span><span class="q"><button data-m="${i}" aria-label="-">−</button>${cart[i]}<button data-p="${i}" aria-label="+">+</button></span></div>`).join("");
+ $("#empty").style.display=ids.length?"none":"block";$("#co").style.display=ids.length?"block":"none";
+ $("#total").textContent=fmt(tot());
+ const lines=ids.map(i=>`${cart[i]} x ${ITEMS[i].n.en}`).join(", ");
+ $("#waCart").href=wa(`Hello L'escalette, I'd like to order: ${lines}. Total ${fmt(tot())}.`);
+}
+document.addEventListener("click",e=>{
+ const b=e.target.closest("button");if(!b)return;
+ if(b.id==="en"||b.id==="rw"){L=b.id;render()}
+ if(b.dataset.c){cat=b.dataset.c;render()}
+ if(b.dataset.s){sub=b.dataset.s;render()}
+ if(b.dataset.a){cart[b.dataset.a]=(cart[b.dataset.a]||0)+1;cartUI();$("#cnt").parentElement.animate([{transform:"scale(1.15)"},{transform:"scale(1)"}],200)}
+ if(b.dataset.p){cart[b.dataset.p]++;cartUI()}
+ if(b.dataset.m){if(--cart[b.dataset.m]<1)delete cart[b.dataset.m];cartUI()}
+ if(b.dataset.pk){$("#pkgSel").selectedIndex=+b.dataset.pk;$("#bookForm").scrollIntoView({behavior:"smooth"})}
+});
+const open=v=>$("#drawer").classList.toggle("open",v);
+$("#openCart").onclick=()=>open(true);$("#closeCart").onclick=()=>open(false);$("#shade").onclick=()=>open(false);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")open(false)});
+$("#payBtn").onclick=()=>{
+ const t=T[L],n=$("#cn").value.trim(),p=$("#cp").value.replace(/\s/g,""),a=$("#ca").value.trim(),ok=$("#payOk");
+ ok.style.display="block";ok.style.background="";
+ if(!n||!a||!/^(07\d{8}|\+?2507\d{8})$/.test(p)){ok.style.background="#fde8e8";ok.style.color="#7f1d1d";ok.textContent=t.need;return}
+ const m=document.querySelector("input[name=pm]:checked").value;
+ ok.style.color="";ok.textContent=t.pay_ok(m,p,fmt(tot()));
+ /* Production: POST order to your server, which calls the MTN MoMo / Airtel Money collection API. */
+};
+$("#bookForm").onsubmit=e=>{
+ e.preventDefault();const f=Object.fromEntries(new FormData(e.target));
+ const msg=`BOOKING REQUEST - L'escalette\nPackage: ${f.pkg}\nName: ${f.name} ${f.org?"("+f.org+")":""}\nPhone: ${f.phone}\nDate: ${f.date}\nGuests: ${f.guests}\nVenue: ${f.venue}\nNotes: ${f.notes}`;
+ const o=$("#bookOk");o.style.display="block";o.textContent=T[L].req_ok;window.open(wa(msg),"_blank");
+};
+["#waFab","#waFoot"].forEach(s=>{$(s).href=wa("Hello L'escalette, I have a question.")});
+render();
+</script>
+</body>
+</html>
